@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #fdfdfc;
+  --surface: #f8f8f6;
+  --ink-primary: #121212;
+  --ink-secondary: #666660;
+  --grid: #e8e8e3;
+  --accent-live: #10b981;
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .crafty-btn {
+    @apply inline-flex items-center gap-2 border border-ink-primary bg-white px-4 py-2 font-mono text-xs text-ink-primary transition-all duration-150 ease-out;
+    box-shadow: 3px 3px 0 0 #e8e8e3;
+  }
+
+  .crafty-btn:hover {
+    box-shadow: 5px 5px 0 0 #121212;
+    transform: translate(-2px, -2px);
+  }
+
+  .crafty-btn:active {
+    box-shadow: 0 0 0 0 transparent;
+    transform: translate(1px, 1px);
+  }
+
+  .crafty-btn-inverted {
+    @apply border-white bg-ink-primary text-white;
+    box-shadow: 3px 3px 0 0 #666660;
+  }
+
+  .crafty-btn-inverted:hover {
+    box-shadow: 5px 5px 0 0 #ffffff;
+  }
+}
